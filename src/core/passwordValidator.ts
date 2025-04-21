@@ -16,7 +16,6 @@ export function passwordValidatorV1(password: string): boolean | undefined {
 }
 
 export function passwordValidatorV2(password: string): boolean {
-
   function containsMinimumCharacters(password: string): boolean {
     if (password.length >= 6) {
       return true;
@@ -71,10 +70,23 @@ export function passwordValidatorV2(password: string): boolean {
 }
 
 export function passwordValidatorV3(password: string): boolean {
+
   const passwordHasValidSize: boolean = password.length >= 6;
   const passwordHasUpperCaseLetter: boolean = Boolean(password.match(/[A-Z]/));
   const passwordHasLowerCaseLetter: boolean = Boolean(password.match(/[a-z]/));
   const passwordHasUnderscore: boolean = Boolean(password.match('_'));
   const passwordHasNumber: boolean = Boolean(password.match(/[0-9]/));
-  return passwordHasValidSize && passwordHasUpperCaseLetter && passwordHasLowerCaseLetter && passwordHasUnderscore && passwordHasNumber;
+
+  const passwordIsValid: boolean =
+    passwordHasValidSize &&
+    passwordHasUpperCaseLetter &&
+    passwordHasLowerCaseLetter &&
+    passwordHasUnderscore &&
+    passwordHasNumber;
+
+  if (passwordIsValid) {
+    return true;
+  } else {
+    return false;
+  }
 }
