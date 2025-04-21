@@ -4,23 +4,16 @@ El problema es que si voy paso a paso no me van a pasar los anteriores en verde.
 
 '1_Hola' -> true
 '1_Hol' -> false
-'1_hol' -> false
+'1_hola' -> false
 '1hol' -> false
 '1' -> false
 '' -> false
 
-Descarta estos em este orden cuando veas que te sale
+Haz que siempre tenga 6 caracteres o mas
 
-'' -> false
-'J_hj2'
-'123456' -> false
-'HHHIII' -> false
-'hhhiii' -> false
-'______' -> false
-'123HHii _'
  */
 
 export function passwordValidator(password: string): boolean {
-  if(password.length >= 6) return true;
+  if (password.length >= 6 && password.toLowerCase() !== password) return true;
   return false;
 }
