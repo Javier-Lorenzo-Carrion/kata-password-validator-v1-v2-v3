@@ -64,6 +64,9 @@ describe('PasswordValidator version 3', () => {
   it('reject a password when has not any underscore', () => {
     expect(passwordValidatorV3('12Hola')).toBe(false);
   });
+  it('reject a password when has not any number', () => {
+    expect(passwordValidatorV3('g_Hola')).toBe(false);
+  });
 
 })
 
