@@ -1,4 +1,4 @@
-import { passwordValidatorV1, passwordValidatorV2 } from '../core/passwordValidator';
+import { passwordValidatorV1, passwordValidatorV2, passwordValidatorV3 } from '../core/passwordValidator';
 
 describe('PasswordValidator version 1 should', () => {
   it('accept a valid password', () => {
@@ -48,4 +48,10 @@ describe('PasswordValidator version 2', () => {
   });
 })
 
+describe('PasswordValidator version 3', () => {
+  it('accept a valid password', () => {
+    expect(passwordValidatorV3('1_Hola')).toBe(true);
+  });
+
+})
 

@@ -69,3 +69,7 @@ export function passwordValidatorV2(password: string): boolean {
     containsDigit(password)
   );
 }
+
+export function passwordValidatorV3(password: string): boolean {
+  return true;
+}
