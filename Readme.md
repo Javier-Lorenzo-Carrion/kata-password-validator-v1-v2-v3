@@ -24,3 +24,14 @@ Más información sobre el curso en [diseñosostenible.com](https://diseñososte
 ### Husky hooks
 * Pre-commit: Execute npm analize (tsc + eslint --fix)
 * Pre-push: Execute test
+
+
+## Requisitos de la kata
+
+Programar una funcion booleana que indique si una contraseña dada cumple con los siguientes requisitos de fortaleza:
+
+* Tener una longitud de al menos seis caracteres
+* Contener algun numero
+* Contener alguna letra mayuscula
+* Contener alguna letra minuscula
+* Contener algun guion bajo
