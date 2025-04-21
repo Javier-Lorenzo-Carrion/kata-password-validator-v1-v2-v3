@@ -19,4 +19,7 @@ describe('PasswordValidator', () => {
   it('Should return false when password has 6 chars or more, has any uppercase letter, has any lowercase letter, has any underscore but has not any number, ', () => {
     expect(passwordValidator('g_Hola')).toBe(false);
   });
+  it('Should return false when password is an empty text, ', () => {
+    expect(passwordValidator('')).toBe(false);
+  });
 });
