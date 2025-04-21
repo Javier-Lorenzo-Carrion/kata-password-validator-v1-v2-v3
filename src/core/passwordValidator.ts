@@ -26,5 +26,10 @@ export function passwordValidatorV2(password: string): boolean {
   const containsLowerCaseLetter: boolean = arrayToEvaluateLowerCases.join('') !== password;
   const containsUpperCaseLetter: boolean = arrayToEvaluateUpperCases.join('') !== password;
 
-  return password.length >= 6 && containsUpperCaseLetter && containsLowerCaseLetter;
+  return (
+    password.length >= 6 &&
+    containsUpperCaseLetter &&
+    containsLowerCaseLetter &&
+    arrayToEvaluateUpperCases.includes('_')
+  );
 }

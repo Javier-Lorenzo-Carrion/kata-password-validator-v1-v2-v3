@@ -37,6 +37,9 @@ describe('PasswordValidator version 2', () => {
   it('reject a password when has not any lowercase letter', () => {
     expect(passwordValidatorV2('1_HOLA')).toBe(false);
   });
+  it('reject a password when has not any underscore', () => {
+    expect(passwordValidatorV2('12Hola')).toBe(false);
+  });
 })
 
 
