@@ -20,5 +20,6 @@ export function passwordValidatorV1(password: string): boolean {
 }
 
 export function passwordValidatorV2(password: string): boolean {
-  return true;
+  const password1: string [] = password.split('');
+  return password1.length >= 6;
 }
