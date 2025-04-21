@@ -1,4 +1,4 @@
-export function passwordValidator(password: string): boolean {
+export function passwordValidatorV1(password: string): boolean {
 
   const minimumCharacters: number = 6;
   const passwordContainsMinimumCharacters: boolean = password.length >= minimumCharacters;
