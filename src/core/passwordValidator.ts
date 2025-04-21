@@ -21,5 +21,6 @@ Descarta estos em este orden cuando veas que te sale
  */
 
 export function passwordValidator(password: string): boolean {
-  return true;
+  if(password.length >= 6) return true;
+  return false;
 }
