@@ -1,4 +1,4 @@
-import { passwordValidatorV1 } from '../core/passwordValidatorV1';
+import { passwordValidatorV1, passwordValidatorV2 } from '../core/passwordValidator';
 
 describe('PasswordValidator version 1', () => {
   it('Should return true when password has 6 chars or more, has any number, has any underscore, has any uppercase letter and has any lowercase letter', () => {
@@ -23,3 +23,9 @@ describe('PasswordValidator version 1', () => {
     expect(passwordValidatorV1('')).toBe(false);
   });
 });
+
+describe('PasswordValidator version 2', () => {
+  it('Should return true when password has 6 chars or more, has any number, has any underscore, has any uppercase letter and has any lowercase letter', () => {
+    expect(passwordValidatorV2('1_Hola')).toBe(true);
+  });
+})

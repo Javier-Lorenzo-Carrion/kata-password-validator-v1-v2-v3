@@ -18,3 +18,7 @@ export function passwordValidatorV1(password: string): boolean {
   }
   return false;
 }
+
+export function passwordValidatorV2(password: string): boolean {
+  return true;
+}
