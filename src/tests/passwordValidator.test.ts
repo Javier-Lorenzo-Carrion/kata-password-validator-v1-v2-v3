@@ -13,13 +13,13 @@ describe('PasswordValidator version 1 should', () => {
   it('reject a password when has not any lowercase letter', () => {
     expect(passwordValidatorV1('1_HOLA')).toBe(false);
   });
-  it('reject a password when has not any underscore, ', () => {
+  it('reject a password when has not any underscore', () => {
     expect(passwordValidatorV1('12Hola')).toBe(false);
   });
-  it('reject a password when has not any number, ', () => {
+  it('reject a password when has not any number', () => {
     expect(passwordValidatorV1('g_Hola')).toBe(false);
   });
-  it('reject a password when password is an empty text, ', () => {
+  it('reject a password when password is an empty text', () => {
     expect(passwordValidatorV1('')).toBe(false);
   });
 });
@@ -35,9 +35,8 @@ describe('PasswordValidator version 2', () => {
     expect(passwordValidatorV2('1_hola')).toBe(false);
   });
   it('reject a password when has not any lowercase letter', () => {
-    expect(passwordValidatorV1('1_HOLA')).toBe(false);
+    expect(passwordValidatorV2('1_HOLA')).toBe(false);
   });
-
 })
 
 

@@ -16,12 +16,15 @@ export function passwordValidatorV1(password: string): boolean | undefined {
 }
 
 export function passwordValidatorV2(password: string): boolean {
-  const formatedPassword: string[] = [];
 
-  password.split('').forEach((char: string) => {
-    formatedPassword.push(char.toLowerCase());
-  });
+  const arrayToEvaluateUpperCases: string[] = [];
+  const arrayToEvaluateLowerCases: string[] = [];
 
-  return password.length >= 6 && formatedPassword.join('') !== password;
+  password.split('').forEach((char: string) => { arrayToEvaluateUpperCases.push(char.toLowerCase());});
+  password.split('').forEach((char: string) => { arrayToEvaluateLowerCases.push(char.toUpperCase());});
+
+  const containsLowerCaseLetter: boolean = arrayToEvaluateLowerCases.join('') !== password;
+  const containsUpperCaseLetter: boolean = arrayToEvaluateUpperCases.join('') !== password;
+
+  return password.length >= 6 && containsUpperCaseLetter && containsLowerCaseLetter;
 }
-
