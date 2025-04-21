@@ -52,6 +52,9 @@ describe('PasswordValidator version 3', () => {
   it('accept a valid password', () => {
     expect(passwordValidatorV3('1_Hola')).toBe(true);
   });
+  it('reject a password when has less than 6 characters', () => {
+    expect(passwordValidatorV3('1_Hol')).toBe(false);
+  });
 
 })
 
