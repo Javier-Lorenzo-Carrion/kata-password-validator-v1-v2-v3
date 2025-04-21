@@ -17,13 +17,11 @@ export function passwordValidatorV1(password: string): boolean | undefined {
 
 export function passwordValidatorV2(password: string): boolean {
   const formatedPassword: string[] = [];
-  let countedChars: number = 0;
 
   password.split('').forEach((char: string) => {
-    countedChars += 1;
     formatedPassword.push(char.toLowerCase());
   });
 
-  return countedChars >= 6 && formatedPassword.join('') !== password;
+  return password.length >= 6 && formatedPassword.join('') !== password;
 }
 

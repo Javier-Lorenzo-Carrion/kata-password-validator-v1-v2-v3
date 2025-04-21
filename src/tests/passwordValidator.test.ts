@@ -34,6 +34,9 @@ describe('PasswordValidator version 2', () => {
   it('reject a password when has not any uppercase letter', () => {
     expect(passwordValidatorV2('1_hola')).toBe(false);
   });
+  it('reject a password when has not any lowercase letter', () => {
+    expect(passwordValidatorV1('1_HOLA')).toBe(false);
+  });
 
 })
 
