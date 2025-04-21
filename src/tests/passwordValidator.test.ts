@@ -16,4 +16,7 @@ describe('PasswordValidator', () => {
   it('Should return false when password has 6 chars or more, has any number, has any uppercase letter, has any lowercase letter but has not any underscore, ', () => {
     expect(passwordValidator('12Hola')).toBe(false);
   });
+  it('Should return false when password has 6 chars or more, has any uppercase letter, has any lowercase letter, has any underscore but has not any number, ', () => {
+    expect(passwordValidator('g_Hola')).toBe(false);
+  });
 });
