@@ -7,7 +7,6 @@
         "noImplicitAny": false,
         "sourceMap": true, 
         "outDir":"./lib/",
-        "strict": true
     },
     "include": [
         "src/**/*"
