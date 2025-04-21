@@ -72,5 +72,6 @@ export function passwordValidatorV2(password: string): boolean {
 
 export function passwordValidatorV3(password: string): boolean {
   const passwordHasValidSize: boolean = password.length >= 6;
-  return passwordHasValidSize;
+  const passwordHasUpperCaseLetter: boolean = Boolean(password.match(/[A-Z]/));
+  return passwordHasValidSize && passwordHasUpperCaseLetter;
 }
