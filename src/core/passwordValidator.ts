@@ -17,19 +17,55 @@ export function passwordValidatorV1(password: string): boolean | undefined {
 
 export function passwordValidatorV2(password: string): boolean {
 
-  const arrayToEvaluateUpperCases: string[] = [];
-  const arrayToEvaluateLowerCases: string[] = [];
+  function containsMinimumCharacters(password: string): boolean {
+    if (password.length >= 6) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
-  password.split('').forEach((char: string) => { arrayToEvaluateUpperCases.push(char.toLowerCase());});
-  password.split('').forEach((char: string) => { arrayToEvaluateLowerCases.push(char.toUpperCase());});
+  function containsUpperCaseLetter(password: string): boolean {
+    for (let i = 0; i < password.length; i++) {
+      if (password.charAt(i).toLowerCase() !== password.charAt(i)) {
+        return true;
+      }
+    }
+    return false;
+  }
 
-  const containsLowerCaseLetter: boolean = arrayToEvaluateLowerCases.join('') !== password;
-  const containsUpperCaseLetter: boolean = arrayToEvaluateUpperCases.join('') !== password;
+  function containsLowerCaseLetter(password: string): boolean {
+    for (let i = 0; i < password.length; i++) {
+      if (password.charAt(i).toUpperCase() !== password.charAt(i)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function containsUnderscore(password: string): boolean {
+    for (let i = 0; i < password.length; i++) {
+      if (password.charAt(i).includes('_')) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function containsDigit(password: string): boolean {
+    for (let i = 0; i < password.length; i++) {
+      if (Number(password.charAt(i))) {
+        return true;
+      }
+    }
+    return false;
+  }
 
   return (
-    password.length >= 6 &&
-    containsUpperCaseLetter &&
-    containsLowerCaseLetter &&
-    arrayToEvaluateUpperCases.includes('_')
+    containsMinimumCharacters(password) &&
+    containsUpperCaseLetter(password) &&
+    containsLowerCaseLetter(password) &&
+    containsUnderscore(password) &&
+    containsDigit(password)
   );
 }
