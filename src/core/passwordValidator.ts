@@ -14,6 +14,6 @@ Haz que siempre tenga 6 caracteres o mas
  */
 
 export function passwordValidator(password: string): boolean {
-  if (password.length >= 6 && password.toLowerCase() !== password) return true;
+  if (password.length >= 6 && password.toLowerCase() !== password && password.toUpperCase() !== password) return true;
   return false;
 }
